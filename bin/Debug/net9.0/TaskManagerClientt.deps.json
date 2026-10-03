@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v9.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v9.0": {
+      "TaskManagerClientt/1.0.0": {
+        "runtime": {
+          "TaskManagerClientt.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "TaskManagerClientt/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

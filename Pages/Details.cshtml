@@ -1,0 +1,71 @@
+@page
+@model TaskManagerClient.Pages.DetailsModel
+
+@{
+    ViewData["Title"] = "Просмотр задачи";
+}
+
+<div class="container mt-4">
+
+    <h1>Просмотр задачи</h1>
+
+    @if (!string.IsNullOrEmpty(Model.ErrorMessage))
+    {
+        <div class="alert alert-danger">
+            @Model.ErrorMessage
+        </div>
+    }
+    else if (Model.Task != null)
+    {
+        <div class="card">
+            <div class="card-body">
+
+                <h5 class="card-title">
+                    @Model.Task.Title
+                </h5>
+
+                <p>
+                    <strong>ID:</strong>
+                    @Model.Task.Id
+                </p>
+
+                <p>
+                    <strong>Описание:</strong>
+                    @Model.Task.Description
+                </p>
+
+                <p>
+                    <strong>Статус:</strong>
+
+                    @if (Model.Task.IsCompleted)
+                    {
+                        <span class="badge bg-success">
+                            Выполнено
+                        </span>
+                    }
+                    else
+                    {
+                        <span class="badge bg-warning text-dark">
+                            В работе
+                        </span>
+                    }
+                </p>
+
+                <a
+                    asp-page="/Edit"
+                    asp-route-id="@Model.Task.Id"
+                    class="btn btn-warning">
+                    Изменить
+                </a>
+
+                <a
+                    asp-page="/Index"
+                    class="btn btn-secondary">
+                    Назад
+                </a>
+
+            </div>
+        </div>
+    }
+
+</div>
